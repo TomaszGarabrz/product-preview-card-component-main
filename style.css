@@ -1,0 +1,128 @@
+/*RESET */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+:root {
+  --primary-cyan-color: hsl(158, 36%, 37%);
+  --primary-cyan-color--hover: hsl(158, 16%, 17%);
+  --primary-cream-color: hsl(30, 38%, 92%);
+
+  --neutral--dark-blue-color: hsl(212, 21%, 14%);
+  --neutral--grayish-blue-color: hsl(228, 12%, 48%);
+  --white-color: hsl(0, 0%, 100%);
+}
+
+body {
+  /* font-family: 'Fraunces', serif; */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ min-height: 100vh;
+ background-color: var(--primary-cream-color);
+}
+
+.product__wrapper {
+  width: 700px;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 auto;
+  min-height: 500px;
+  display: grid;  
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.product__img {
+  background-image: url('./images/image-product-desktop.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.product__content__wrapper {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product__content__wrapper h4 {
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: .5rem;
+}
+
+.product__content__wrapper h1 {
+  font-size: 2.5rem;
+  font-family: 'Fraunces', serif;
+}
+
+.product__content__wrapper > .product__desc {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.product__content__wrapper > .product__price {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Fraunces', serif;
+  color: var(--primary-cyan-color);
+  
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.product__content__wrapper > .product__price span {
+  font-size: 1rem;
+  color: var(--neutral--grayish-blue-color);
+  text-decoration: line-through;
+}
+
+.product__content__wrapper button {
+  background-color: var(--primary-cyan-color);
+  border: none;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--white-color);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: all .25s ease-in-out;
+}
+
+.product__content__wrapper button:hover {
+  background-color: var(--primary-cyan-color--hover)
+}
+
+
+/*********** MOBILE ************/
+
+
+@media (max-width: 750px) {
+  .product__wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 40% 60%;
+    min-height: 700px;
+    width: 500px;
+    max-width: 90%;
+  }
+
+  .product__img {
+    background-position: center;
+  }
+}
